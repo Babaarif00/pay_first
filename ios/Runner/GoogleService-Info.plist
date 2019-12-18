@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>523634750762-7o1974jeqiksj5j734fhasqotfkho1e9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.523634750762-7o1974jeqiksj5j734fhasqotfkho1e9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA3kYmjOQGXq_ko2fdiX7g4Xq1V-rxML7o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>523634750762</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.payfirst</string>
+	<key>PROJECT_ID</key>
+	<string>payfirst-bf367</string>
+	<key>STORAGE_BUCKET</key>
+	<string>payfirst-bf367.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:523634750762:ios:0033dce3d7a03c0b1f5a53</string>
+	<key>DATABASE_URL</key>
+	<string>https://payfirst-bf367.firebaseio.com</string>
+</dict>
+</plist>

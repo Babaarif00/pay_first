@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "523634750762",
+    "firebase_url": "https://payfirst-bf367.firebaseio.com",
+    "project_id": "payfirst-bf367",
+    "storage_bucket": "payfirst-bf367.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523634750762:android:6e854429b99d40d71f5a53",
+        "android_client_info": {
+          "package_name": "com.example.payfirst.pay_first"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3I6FDIswxDaPxnefK226_xX6tXoe3eyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
