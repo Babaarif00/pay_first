@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pay_first/signup_page.dart';
 
 class MyLoginPage extends StatefulWidget{
   @override
@@ -26,7 +27,7 @@ class _LoginPageState extends State<MyLoginPage>{
       ),
       body: Stack(
         children: <Widget>[
-          showForm(),
+          showLoginForm(),
           showCircularProgress(),
         ],
       )
@@ -73,7 +74,7 @@ Widget showErrorMessage(){
 
 Widget showEmailInput(){
   return Padding(
-    padding: const EdgeInsets.fromLTRB(0, 100.0, 0.0, 0.0),
+    padding: const EdgeInsets.fromLTRB(0, 70.0, 0.0, 0.0),
     child: new TextFormField(
       maxLines: 1,
       keyboardType: TextInputType.emailAddress,
@@ -119,6 +120,7 @@ Widget showLoginButton(){
     padding: EdgeInsets.fromLTRB(0, 45.0, 0.0, 0.0),
     child: SizedBox(
       height: 40.0,
+      width: 10,
       child: new RaisedButton(
         elevation: 5.0,
         shape: new RoundedRectangleBorder(
@@ -134,13 +136,21 @@ Widget showLoginButton(){
 
 }
 
+
 Widget showCreateButton(){
   return new FlatButton(
     child: new Text(
       _isLoginForm ? 'Create an Account' : 'Have an Account? Sign in',
       style: new TextStyle(fontSize: 18.0,fontWeight: FontWeight.w300),
     ),
-    onPressed: toggleFormMode,
+    onPressed: () {
+      var router = new MaterialPageRoute(
+        builder: (BuildContext context){
+          return new SignUpPage();
+
+        });
+        Navigator.of(context).push(router);
+    }
   );
 
 }
@@ -149,10 +159,10 @@ Widget showLogo(){
   return new Hero(
     tag: 'hero',
     child: Padding(
-      padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+      padding: EdgeInsets.fromLTRB(0.0, 90.0, 0.0, 0.0),
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
-        radius: 48.0,
+        radius: 38.0,
         child: Image.asset('assets/PayFirst.png'),
       ),
     ) ,
@@ -179,7 +189,7 @@ void toggleFormMode(){
 
 
 
-Widget showForm(){
+Widget showLoginForm(){
 
   return new Container(
     padding: EdgeInsets.all(16.0),

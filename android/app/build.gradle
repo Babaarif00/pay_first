@@ -24,6 +24,7 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -39,10 +40,13 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.payfirst.pay_first"
-        minSdkVersion 16
+        minSdkVersion 23
+        // adding the below line resolved https://github.com/flutter/flutter/issues/21009 for me.
+        multiDexEnabled true
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        //multiDexKeepFile file('multidex-flutter.txt')
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -66,4 +70,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
 }
-apply plugin: 'com.google.gms.google-services'
