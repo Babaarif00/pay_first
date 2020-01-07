@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:pay_first/firebase/authentication.dart';
 
 class SignUpPage extends StatefulWidget {
+  SignUpPage({this.auth, this.loginCallBack});
+
+  final BaseAuth auth;
+  final VoidCallback loginCallBack;
+
   @override
   State<StatefulWidget> createState() => _SignUpPageState();
 }
 
 class _SignUpPageState extends State<SignUpPage> {
 
+  final _formkey = new GlobalKey<FormState>();
+
   String _email;
   String _password;
   String _errorMessage;
   String _confirmPassword;
+  bool _isSignupForm;
+  bool _isLoading;
 
 
 
@@ -97,6 +107,7 @@ class _SignUpPageState extends State<SignUpPage> {
     padding: const EdgeInsets.fromLTRB(0, 15.0, 0.0, 0.0),
     child: new TextFormField(
       maxLines: 1,
+      key: _formkey,
       obscureText: true,
       autofocus: false,
       decoration: new InputDecoration(
@@ -106,6 +117,7 @@ class _SignUpPageState extends State<SignUpPage> {
           color: Colors.grey,
         )
       ),
+      
       validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
       onSaved: (value) => _password = value.trim(),
     ),
@@ -119,6 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
     padding: const EdgeInsets.fromLTRB(0, 15.0, 0.0, 0.0),
     child: new TextFormField(
       maxLines: 1,
+      key: _formkey,
       obscureText: true,
       autofocus: false,
       decoration: new InputDecoration(
@@ -129,6 +142,7 @@ class _SignUpPageState extends State<SignUpPage> {
         )
       ),
       validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+      
       onSaved: (value) => _confirmPassword = value.trim(),
     ),
   );
