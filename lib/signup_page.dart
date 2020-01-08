@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pay_first/firebase/authentication.dart';
+import 'package:pay_first/login_page.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({this.auth, this.loginCallBack});
@@ -42,6 +43,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return new Container(
       padding: EdgeInsets.all(16.0),
         child: new Form(
+          key: _formkey,
         child: new ListView(
           shrinkWrap: true,
           children: <Widget>[
@@ -107,7 +109,6 @@ class _SignUpPageState extends State<SignUpPage> {
     padding: const EdgeInsets.fromLTRB(0, 15.0, 0.0, 0.0),
     child: new TextFormField(
       maxLines: 1,
-      key: _formkey,
       obscureText: true,
       autofocus: false,
       decoration: new InputDecoration(
@@ -131,7 +132,6 @@ class _SignUpPageState extends State<SignUpPage> {
     padding: const EdgeInsets.fromLTRB(0, 15.0, 0.0, 0.0),
     child: new TextFormField(
       maxLines: 1,
-      key: _formkey,
       obscureText: true,
       autofocus: false,
       decoration: new InputDecoration(
@@ -141,13 +141,41 @@ class _SignUpPageState extends State<SignUpPage> {
           color: Colors.grey,
         )
       ),
-      validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+      validator: (value) => value != _password ? 'Passwords do not match' : null,
       
       onSaved: (value) => _confirmPassword = value.trim(),
     ),
   );
 
 
+  }
+
+  void signup() async{
+    setState(() {
+      _errorMessage = "";
+      _isLoading = true;
+    });
+    try{
+      String userID = await widget.auth.signUp(_email, _password);
+      print('Signedup user: $userID');
+      var router = new MaterialPageRoute(
+        builder: (BuildContext context){
+          return new MyLoginPage();
+
+        });
+        Navigator.of(context).push(router);
+        setState(() {
+          _isLoading = false;
+        });
+    }
+    catch(e){
+      print('Error: $e');
+        setState(() {
+          _isLoading = false;
+          _errorMessage = e.message;
+
+    });
+  }
   }
 
 
@@ -165,7 +193,7 @@ class _SignUpPageState extends State<SignUpPage> {
         color: Colors.green,
         child: new Text('Signup',
         style: new TextStyle(fontSize: 20.0, color: Colors.white),),
-        onPressed: () => debugPrint("signup"),
+        onPressed: signup,
       ),
     ),
   );

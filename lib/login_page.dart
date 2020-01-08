@@ -1,8 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pay_first/pages/HomePage.dart';
 import 'package:pay_first/signup_page.dart';
+import 'package:pay_first/firebase/authentication.dart';
 
 class MyLoginPage extends StatefulWidget{
+  MyLoginPage({this.auth, this.loginCallBack});
+
+  final BaseAuth auth;
+  final VoidCallback loginCallBack;
+
   @override
   State<StatefulWidget> createState() => _LoginPageState();
 
@@ -129,7 +136,7 @@ Widget showLoginButton(){
         color: Colors.green,
         child: new Text(_isLoginForm ? 'Login' : 'Create Account',
         style: new TextStyle(fontSize: 20.0, color: Colors.black),),
-        onPressed: validateAndSubmit,
+        onPressed: login,
       ),
     ),
   );
@@ -170,12 +177,37 @@ Widget showLogo(){
 
 }
 
-void validateAndSubmit() async{
+void login() async{
+  setState(() {
+      _errorMessage = "";
+      _isLoading = true;
+    });
+    try{
+      String userID = await widget.auth.signIn(_email, _password);
+      print('logged in user: $userID');
+      var router = new MaterialPageRoute(
+        builder: (BuildContext context){
+          return new HomePage();
+
+        });
+        Navigator.of(context).push(router);
+        setState(() {
+          _isLoading = false;
+        });
+    }
+    catch(e){
+      print('Error: $e');
+        setState(() {
+          _isLoading = false;
+          _errorMessage = e.message;
+
+    });
+  }
 
 }
 
 void resetForm(){
-  _formkey.currentState.reset();
+ // _email.reset();
   _errorMessage = "";
 }
 
