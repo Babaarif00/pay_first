@@ -1,6 +1,6 @@
-# pay_first
+# login_demo_firebase
 
-A new Flutter application.
+A new Flutter project.
 
 ## Getting Started
 

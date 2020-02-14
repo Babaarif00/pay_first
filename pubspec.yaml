@@ -1,5 +1,5 @@
-name: pay_first
-description: A new Flutter application.
+name: login_demo_firebase
+description: A new Flutter project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -51,13 +51,14 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-      - assets/PayFirst.png
-
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
+  assets:
+    - assets/logo.png
+    - assets/login-screen-background.png
+    - assets/signup-screen-background.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

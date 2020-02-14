@@ -8,7 +8,79 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:523634750762:android:6e854429b99d40d71f5a53",
+        "mobilesdk_app_id": "1:523634750762:android:74e0aebd469f0ae81f5a53",
+        "android_client_info": {
+          "package_name": "com.example.login_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3I6FDIswxDaPxnefK226_xX6tXoe3eyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523634750762-7o1974jeqiksj5j734fhasqotfkho1e9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.payfirst"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523634750762:android:b85ae4348cafa4951f5a53",
+        "android_client_info": {
+          "package_name": "com.example.login_demo_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3I6FDIswxDaPxnefK226_xX6tXoe3eyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "523634750762-7o1974jeqiksj5j734fhasqotfkho1e9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.payfirst"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523634750762:android:4a0f46820330522c1f5a53",
         "android_client_info": {
           "package_name": "com.example.payfirst.pay_first"
         }
@@ -30,6 +102,13 @@
             {
               "client_id": "523634750762-5e0to6m99vbt9dnm4udldqikdvo97lve.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "523634750762-7o1974jeqiksj5j734fhasqotfkho1e9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.payfirst"
+              }
             }
           ]
         }
